@@ -1,25 +1,39 @@
-// import java.util.*;
-// class series {
-//     public static long factorial(int num) {
-//         long fact = 1;
-//         for (int i = 1; i <= num; i++) {
-//             fact *= i;
-//         }
-//         return fact;
-//     }
-//     public static void main(String args[])
-//     {
-//         Scanner sc = new Scanner(System.in);
-//         System.out.println("Enter a number");
-//         int n = sc.nextInt();
-//         int x = sc.nextInt();
-//         int i,s=0;
-//         int fact=1;
-//         for(i=2;i<=n;i+=2)
-//         {
-//             fact=fact*i;
-//             s=s+Math.pow(x,i)/fact;
-//         }
-//         System.out.println("Sum of series is "+s);
-//     }
-// }
+import java.util.Scanner;
+
+public class series {
+    public static int factorial(int n)
+    {
+        if(n==0)
+        {
+            return 1;
+        }
+        else
+        {
+            return n*factorial(n-1);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get values for x and n
+        System.out.print("Enter the value of x: ");
+        double x = scanner.nextDouble();
+        
+        System.out.print("Enter the number of terms (n): ");
+        int n = scanner.nextInt();
+
+        double sum = 0.0;
+        int fact = 0;
+
+        for(int i=1;i<=n;i++)
+        {
+            int exp=2*i;
+            fact=factorial(exp);
+            sum+=Math.pow(x,exp)/fact;
+        }
+
+        System.out.println("Sum of the series is: "+sum);
+   
+    }
+}
