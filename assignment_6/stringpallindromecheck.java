@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class prog3 {
+public class stringpallindromecheck {
     public static boolean isPalindrome(String word) {
         int i = 0, j = word.length() - 1;
         while (i < j) {

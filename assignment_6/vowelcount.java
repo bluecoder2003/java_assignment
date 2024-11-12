@@ -1,5 +1,15 @@
 import java.util.Scanner;
-public class prog5 {
+public class vowelcount {
+
+    public static int countVowels(String word) {
+        int count = 0;
+        for (char c : word.toCharArray()) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                count++;
+            }
+        }
+        return count;
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a sentence: ");
@@ -17,14 +27,5 @@ public class prog5 {
         }
 
         System.out.println("Word with maximum vowels: " + wordWithMaxVowels);
-    }
-    public static int countVowels(String word) {
-        int count = 0;
-        for (char c : word.toCharArray()) {
-            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
-                count++;
-            }
-        }
-        return count;
     }
 }
